@@ -15,25 +15,35 @@ export default function Textform(props) {
         //we change the text to the new text that the user will write in the box 
         settext(event.target.value);
     }
-    //creating a state variable 
+    //creating a state variable with the help of ustate hook 
+    //text is a variable and settext is the function we use to change it 
     const [text, settext] = useState("enter text here");
     //text = {"new text"}; this is a wrong way to change the state 
     //settext("new tect"); //correct method
-    return (
-    
-      <div>
+    return ( 
+    <> 
+      <div className="container"> 
         <h1>{props.heading}</h1>
         <div className="container mt-5">
           <form>
             <div className="form-group">
               <textarea className="form-control" value={text} onChange={handleOnChange} id="textArea" rows="10"></textarea>
             </div>
-            {/* <button type="submit" className="btn btn-primary">Submit</button> */}
-            <button type="submit" className="btn btn-primary" onClick={handleUpclick} >Convert to UpperCase </button>
+            <button type="submit" className="btn btn-primary mx-2">Submit</button>
+            <button type="submit" className="btn btn-primary my-3 mx-2"  onClick={handleUpclick} >Convert to UpperCase </button>
 
           </form>
         </div>
       </div>
+      <div className="container my-2" >
+        <h1>your text summary </h1>
+        <p> {text.split(" ").length} words {text.length} characters  </p>
+        <p>{0.05 + text.split(" ").length }  minutes to read </p>
+        <h2>Preview</h2>
+        <p>{text}</p>
+      </div>
+    </>
+
     
   );
 }
