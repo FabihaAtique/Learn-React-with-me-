@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
-export default function NavBar_component(props) {
+export default function Navbar(props) {
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
       <div className="container-fluid">
@@ -32,7 +31,8 @@ export default function NavBar_component(props) {
                 {props.AboutText}
               </a>
             </li>
-            <ulsss className="dropdown-menu">
+            {/* Add the dropdown menu class to the parent ul */}
+            <ul className="dropdown-menu">
               <li>
                 <a className="dropdown-item" href="/">
                   Action
@@ -44,15 +44,15 @@ export default function NavBar_component(props) {
                 </a>
               </li>
               <li>
-                <hr className="dropdown-divider"></hr>
+                <hr className="dropdown-divider" />
               </li>
               <li>
                 <a className="dropdown-item" href="/">
                   Something else here
                 </a>
               </li>
-            </ulsss>
-
+            </ul>
+            {/* Continue with other navigation items */}
             <li className="nav-item">
               <a className="nav-link disabled" href="/">
                 Disabled
@@ -60,8 +60,8 @@ export default function NavBar_component(props) {
             </li>
           </ul>
           <form className="d-flex" role="search">
-            <input className="form-control me-2" type="search"></input>
-            <input placeholder="Search" aria-label="Search"></input>
+            <input className="form-control me-2" type="search" />
+            <input placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">
               Search
             </button>
@@ -71,13 +71,14 @@ export default function NavBar_component(props) {
     </nav>
   );
 }
-// we have defined that both the props that we have used should be string, any other data tyype will give the error when passing props 
-NavBar_component.propTypes = {
+
+// PropTypes and defaultProps remain the same
+Navbar.propTypes = {
   title: PropTypes.string.isRequired,
   AboutText: PropTypes.string,
 };
-// its a good practice to give default props 
-NavBar_component.defaultProps= {
+
+Navbar.defaultProps = {
   title: "title",
   AboutText: "About your Company",
 };
