@@ -9,6 +9,10 @@ export default function Textform(props) {
         let newtext = text.toUpperCase();
         settext(newtext);
     }
+    const handleclearclick = () =>{
+      let newtext = ' ';
+      settext(newtext);
+    }
     //by default we get an event object 
     const handleOnChange = (event) => {
         console.log("changed");
@@ -31,7 +35,7 @@ export default function Textform(props) {
             </div>
             <button type="submit" className="btn btn-primary mx-2">Submit</button>
             <button type="submit" className="btn btn-primary my-3 mx-2"  onClick={handleUpclick} >Convert to UpperCase </button>
-
+            <button type="submit" className="btn btn-primary my-3 mx-2"  onClick={handleclearclick} >Clear text </button>
           </form>
         </div>
       </div>
