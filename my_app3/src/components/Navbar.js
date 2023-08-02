@@ -59,13 +59,13 @@ export default function Navbar(props) {
               <a className="nav-link disabled" href="/">
                 Disabled
               </a>
-            </li>
+             </li>
           </ul>
           <form className="d-flex" role="search">
             <input placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-success" type="submit">
               Search
-            </button>
+             </button> 
             {/* a condition is used to set the text color to either light or dark  */}
             <div className={`form-check form-switch text-${props.Mode ==="light" ? "dark" : "light"}`}>
               <input
