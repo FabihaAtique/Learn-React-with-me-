@@ -12,6 +12,7 @@ export default function Textform(props) {
     const handleclearclick = () =>{
       let newtext = ' ';
       settext(newtext);
+
     }
     //by default we get an event object 
     const handleOnChange = (event) => {
