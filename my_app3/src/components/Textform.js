@@ -26,12 +26,12 @@ export default function Textform(props) {
     //settext("new tect"); //correct method
     return ( 
     <> 
-      <div className="container"> 
+      <div className="container" style= {{color: props.Mode ==="dark" ? "white" : "#042749"}}> 
         <h1>{props.heading}</h1>
         <div className="container mt-5">
           <form>
             <div className="form-group">
-              <textarea className="form-control" value={text} onChange={handleOnChange} id="textArea" rows="10"></textarea>
+              <textarea className="form-control"  style= {{backgroundColor: props.Mode ==="dark" ? "grey" : "white", color: props.Mode==="dark" ? "white": "black"}} value={text} onChange={handleOnChange} id="textArea" rows="10"></textarea>
             </div>
             <button type="submit" className="btn btn-primary mx-2">Submit</button>
             <button type="submit" className="btn btn-primary my-3 mx-2"  onClick={handleUpclick} >Convert to UpperCase </button>
@@ -39,7 +39,7 @@ export default function Textform(props) {
           </form>
         </div>
       </div>
-      <div className="container my-2" >
+      <div className="container my-2" style= {{color: props.Mode ==="dark" ? "white" : "black"}} >
         <h1>your text summary </h1>
         <p> {text.split(" ").length} words {text.length} characters  </p>
         <p>{0.05 + text.split(" ").length }  minutes to read </p>
