@@ -8,6 +8,7 @@ export default function Textform(props) {
         //as text is state variable, it will re render in the page without a need to reload the page 
         let newtext = text.toUpperCase();
         settext(newtext);
+        props.showAlert("Converted to Uppercase", "success");
     }
     const handleclearclick = () =>{
       let newtext = ' ';

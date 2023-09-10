@@ -44,7 +44,7 @@ function App() {
         {/* i can use this component for other projects  */}
         {/* taking props for the title  */}
         <Navbar
-          title="Fabcode"
+          title="CodeWithFab"
           AboutText="About content"
           Mode={Mode}
           togglemode={togglemode}
@@ -54,7 +54,7 @@ function App() {
         <Routes> {/* Use Routes instead of Switch */}
         {/* exact is used so that there is exact matching  */}
             <Route exact path="/about" element={<About />} />
-            <Route exact path="/" element={<Textform heading="Enter your details " Mode={Mode} />} />
+            <Route exact path="/" element={<Textform showAlert={showAlert} heading="Enter your details " Mode={Mode} />} />
         </Routes>  
         </div>
       </Router>
